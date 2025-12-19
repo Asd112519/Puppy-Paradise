@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <header className="bg-gradient-to-r from-green-500 to-purple-600 text-white shadow-lg">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
-          <Link to="/" className="text-4xl font-extrabold tracking-tight hover:opacity-90 transition">
+          <Link to="/" className="text-4xl font-extrabold tracking-tight hover:opacity-90 transition" style={{ fontFamily: "'Pacifico', cursive" }}>
             The Puppy Paradise
           </Link>
           <nav className="mt-4 md:mt-0">
