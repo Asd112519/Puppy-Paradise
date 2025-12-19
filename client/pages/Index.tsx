@@ -50,7 +50,7 @@ export default function Index() {
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4" style={{ fontFamily: "'Pacifico', cursive" }}>
             Welcome to the Puppy Paradise!
           </h2>
-          <p className="text-xl md:text-2xl font-bold text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl font-bold text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto" style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
             Discover a world of furry friends and everything you need to know about them.
           </p>
           <a
