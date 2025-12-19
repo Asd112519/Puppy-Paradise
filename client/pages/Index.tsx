@@ -76,7 +76,7 @@ export default function Index() {
                 className="bg-white dark:bg-gray-700 text-black dark:text-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition duration-300 block"
               >
                 <img src={breed.image} alt={breed.name} className="w-full h-48 object-cover" />
-                <div className="p-6">
+                <div className="p-6" style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
                   <h3 className="text-2xl font-bold mb-2">{breed.name}</h3>
                   <p className="text-gray-600 dark:text-gray-300">{breed.description}</p>
                 </div>
