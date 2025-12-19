@@ -97,6 +97,7 @@ export default function Index() {
               <div
                 key={idx}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transform hover:scale-105 transition duration-300 text-black dark:text-white"
+                style={{ fontFamily: "'Comic Sans MS', sans-serif" }}
               >
                 <p className="text-lg leading-relaxed">
                   <span className="text-gray-600 dark:text-gray-300 font-bold text-2xl">{item.fact}:</span> {item.text}
