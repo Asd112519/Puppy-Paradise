@@ -183,10 +183,16 @@ export default function Index() {
             <p className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-4" style={{ fontFamily: "'Fredoka', sans-serif" }}>
               🐶 Next Up: Games! 🎮
             </p>
-            <p className="text-2xl font-extrabold text-red-500 dark:text-red-400 mb-4">Coming: January 2026!</p>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              Prepare for interactive fun! We'll be adding dog-themed mini-games to test your reflexes and knowledge.
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              Prepare for interactive fun! We've got Block Blast ready for you to play right now!
             </p>
+            <Link
+              to="/games"
+              className="bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-pink-500 hover:to-purple-600 transition-transform transform hover:scale-105 inline-block"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
+            >
+              Play Now!
+            </Link>
           </div>
         </div>
       </section>
