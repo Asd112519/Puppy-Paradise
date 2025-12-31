@@ -62,6 +62,7 @@ export default function Index() {
           <a
             href="#breeds"
             className="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-blue-600 hover:to-green-500 transition-transform transform hover:scale-110 inline-block"
+            style={{ fontFamily: "'Fredoka', sans-serif" }}
           >
             Explore the Popular dog Breeds
           </a>
@@ -71,7 +72,7 @@ export default function Index() {
       {/* Breeds Section */}
       <section id="breeds" className="py-16 bg-white dark:bg-gray-800 transition duration-300">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white" style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white" style={{ fontFamily: "'Fredoka', sans-serif" }}>
             Popular Dog Breeds
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -115,6 +116,7 @@ export default function Index() {
             <Link
               to="/more-facts"
               className="bg-gradient-to-r from-green-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-purple-500 hover:to-green-500 transition-transform transform hover:scale-105"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
             >
               More Fun Facts!
             </Link>
@@ -135,12 +137,14 @@ export default function Index() {
             <Link
               to="/adopt"
               className="bg-gradient-to-r from-green-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-purple-500 hover:to-green-500 transition-transform transform hover:scale-105"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
             >
               Learn more!
             </Link>
             <Link
               to="/care"
               className="bg-gradient-to-r from-green-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-purple-500 hover:to-green-500 transition-transform transform hover:scale-105"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
             >
               How to care for a dog
             </Link>
@@ -159,6 +163,7 @@ export default function Index() {
             <Link
               to="/interview"
               className="bg-gradient-to-r from-green-500 to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-purple-500 hover:to-green-500 transition-transform transform hover:scale-105"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
             >
               What does Penny have to say?
             </Link>
