@@ -181,10 +181,10 @@ export default function Index() {
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl max-w-md mx-auto transform hover:scale-105 transition duration-500">
             <p className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-4" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-              🐶 Next Up: Games! 🎮
+              🎮 Game Joint 🎮
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Prepare for interactive fun! We've got Block Blast ready for you to play right now!
+              Prepare for interactive fun! We have Block Blast and more games coming soon. Start playing now!
             </p>
             <Link
               to="/games"
