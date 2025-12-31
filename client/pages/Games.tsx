@@ -211,31 +211,34 @@ export default function Games() {
       }
 
       init() {
-        const resizeObserver = new ResizeObserver(() => this.resize());
-        resizeObserver.observe(this.container);
+        this.resizeObserver = new ResizeObserver(() => this.resize());
+        this.resizeObserver.observe(this.container);
         this.resize();
 
         this.themeBtn.addEventListener("click", () => this.cycleTheme());
         this.applyTheme();
 
-        this.canvas.addEventListener("mousedown", (e) =>
-          this.handleStart(e.clientX, e.clientY)
-        );
-        this.canvas.addEventListener(
-          "touchstart",
-          (e) => this.handleStart(e.touches[0].clientX, e.touches[0].clientY),
-          { passive: false }
-        );
+        this.handleMouseDownListener = (e) => this.handleStart(e.clientX, e.clientY);
+        this.handleTouchStartListener = (e) =>
+          this.handleStart(e.touches[0].clientX, e.touches[0].clientY);
+        this.handleMouseMoveListener = (e) => this.handleMove(e.clientX, e.clientY);
+        this.handleTouchMoveListener = (e) =>
+          this.handleMove(e.touches[0].clientX, e.touches[0].clientY);
+        this.handleMouseUpListener = () => this.handleEnd();
+        this.handleTouchEndListener = () => this.handleEnd();
 
-        window.addEventListener("mousemove", (e) => this.handleMove(e.clientX, e.clientY));
-        window.addEventListener(
-          "touchmove",
-          (e) => this.handleMove(e.touches[0].clientX, e.touches[0].clientY),
-          { passive: false }
-        );
+        this.canvas.addEventListener("mousedown", this.handleMouseDownListener);
+        this.canvas.addEventListener("touchstart", this.handleTouchStartListener, {
+          passive: false,
+        });
 
-        window.addEventListener("mouseup", () => this.handleEnd());
-        window.addEventListener("touchend", () => this.handleEnd());
+        window.addEventListener("mousemove", this.handleMouseMoveListener);
+        window.addEventListener("touchmove", this.handleTouchMoveListener, {
+          passive: false,
+        });
+
+        window.addEventListener("mouseup", this.handleMouseUpListener);
+        window.addEventListener("touchend", this.handleTouchEndListener);
 
         this.updateScore(0);
         this.spawnShapes();
