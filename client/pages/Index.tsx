@@ -35,7 +35,7 @@ const breeds = [
   {
     id: "chihuahua",
     name: "Chihuahua",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9xW5-7_VLLz5T9_8P5J6vE_5_BjzNW4nF7w&s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXN5V-H0K5xF8wP9M7Q2L1R6S3T4U5V6W7X8&s",
     description: "Tiny but mighty, Chihuahuas are known for their bold personality and affectionate nature despite their small size.",
   },
 ];
