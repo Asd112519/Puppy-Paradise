@@ -169,7 +169,7 @@ export default function Index() {
       {/* Future Updates Section */}
       <section className="bg-gradient-to-br from-purple-500 to-blue-500 py-16 text-center transition duration-300">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-white mb-6">What's Next in Puppy Paradise?</h2>
+          <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: "'Fredoka', sans-serif" }}>What's Next in Puppy Paradise?</h2>
           <p className="text-xl text-white opacity-90 mb-8 max-w-3xl mx-auto">
             We're constantly working to bring you more fun and features. Our next major update is coming soon!
           </p>
