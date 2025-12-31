@@ -171,29 +171,32 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Game Joint Section */}
+      <section id="games" className="py-16 bg-gradient-to-r from-pink-500 to-purple-600 transition duration-300">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-5xl font-bold text-white mb-6" style={{ fontFamily: "'Fredoka', sans-serif" }}>
+            🎮 Game Joint 🎮
+          </h2>
+          <p className="text-xl text-white opacity-95 mb-12 max-w-3xl mx-auto">
+            Prepare for interactive fun! We have Block Blast and more games coming soon. Step into the Game Joint and start playing now!
+          </p>
+          <Link
+            to="/games"
+            className="bg-white text-purple-600 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 transition-transform transform hover:scale-110 inline-block"
+            style={{ fontFamily: "'Fredoka', sans-serif" }}
+          >
+            Enter Game Joint
+          </Link>
+        </div>
+      </section>
+
       {/* Future Updates Section */}
-      <section className="bg-gradient-to-br from-purple-500 to-blue-500 py-16 text-center transition duration-300">
+      <section className="bg-gradient-to-br from-blue-400 to-indigo-600 py-16 text-center transition duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: "'Fredoka', sans-serif" }}>What's Next in Puppy Paradise?</h2>
           <p className="text-xl text-white opacity-90 mb-8 max-w-3xl mx-auto">
             We're constantly working to bring you more fun and features. Our next major update is coming soon!
           </p>
-
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl max-w-md mx-auto transform hover:scale-105 transition duration-500">
-            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-4" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-              🎮 Game Joint 🎮
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Prepare for interactive fun! We have Block Blast and more games coming soon. Start playing now!
-            </p>
-            <Link
-              to="/games"
-              className="bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-pink-500 hover:to-purple-600 transition-transform transform hover:scale-105 inline-block"
-              style={{ fontFamily: "'Fredoka', sans-serif" }}
-            >
-              Play Now!
-            </Link>
-          </div>
         </div>
       </section>
     </Layout>
