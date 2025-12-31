@@ -92,6 +92,24 @@ const breedDetails: Record<string, { title: string; bgColor: string; details: Ar
       },
     ],
   },
+  "chihuahua": {
+    title: "All About Chihuahuas",
+    bgColor: "bg-pink-100 dark:bg-gray-900",
+    details: [
+      {
+        heading: "Temperament",
+        text: "Chihuahuas are bold, confident, and affectionate despite their tiny size. They are extremely loyal to their owners and love being the center of attention. They can be sassy and have big personalities!",
+      },
+      {
+        heading: "Exercise Needs",
+        text: "Although small, Chihuahuas are quite active and energetic. Short walks, playtime indoors, and interactive games are usually sufficient to keep them exercised and happy.",
+      },
+      {
+        heading: "Training and Care",
+        text: "Chihuahuas are intelligent but can be stubborn, requiring patient and consistent training. Their small size makes them perfect for apartment living, and they need regular dental care due to their small jaws.",
+      },
+    ],
+  },
 };
 
 export default function BreedDetail() {
