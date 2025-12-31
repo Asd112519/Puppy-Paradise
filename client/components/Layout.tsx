@@ -69,7 +69,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="bg-gradient-to-r from-green-500 to-blue-500 text-white py-5">
         <div className="container mx-auto px-10 text-center font-bold">
-          <p>
+          <p style={{ fontFamily: "'Fredoka', sans-serif" }}>
             &copy; 2024 The Puppy Paradise. All rights reserved. |{" "}
             <Link to="/account" className="hover:underline transition duration-300 font-bold text-white">
               Account
