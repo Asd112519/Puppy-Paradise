@@ -172,7 +172,7 @@ export default function Index() {
       </section>
 
       {/* Game Joint Section */}
-      <section id="games" className="py-16 bg-gradient-to-r from-pink-500 to-purple-600 transition duration-300">
+      <section id="games" className="py-16 bg-gradient-to-br from-green-400 to-blue-600 transition duration-300">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-5xl font-bold text-white mb-6" style={{ fontFamily: "'Fredoka', sans-serif" }}>
             🎮 Game Joint 🎮
