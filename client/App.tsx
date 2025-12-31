@@ -14,6 +14,7 @@ import Adoption from "./pages/Adoption";
 import MoreFacts from "./pages/MoreFacts";
 import Interview from "./pages/Interview";
 import Account from "./pages/Account";
+import Games from "./pages/Games";
 
 const queryClient = new QueryClient();
 
