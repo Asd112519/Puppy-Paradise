@@ -175,7 +175,7 @@ export default function Index() {
           </p>
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl max-w-md mx-auto transform hover:scale-105 transition duration-500">
-            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-4" style={{ fontFamily: "'Pacifico', cursive" }}>
+            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-4" style={{ fontFamily: "'Fredoka', sans-serif" }}>
               🐶 Next Up: Games! 🎮
             </p>
             <p className="text-2xl font-extrabold text-red-500 dark:text-red-400 mb-4">Coming: January 2026!</p>
