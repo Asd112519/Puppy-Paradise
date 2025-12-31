@@ -779,6 +779,29 @@ export default function Games() {
         if (this.animationId) {
           cancelAnimationFrame(this.animationId);
         }
+
+        if (this.resizeObserver) {
+          this.resizeObserver.disconnect();
+        }
+
+        if (this.handleMouseDownListener) {
+          this.canvas.removeEventListener("mousedown", this.handleMouseDownListener);
+        }
+        if (this.handleTouchStartListener) {
+          this.canvas.removeEventListener("touchstart", this.handleTouchStartListener);
+        }
+        if (this.handleMouseMoveListener) {
+          window.removeEventListener("mousemove", this.handleMouseMoveListener);
+        }
+        if (this.handleTouchMoveListener) {
+          window.removeEventListener("touchmove", this.handleTouchMoveListener);
+        }
+        if (this.handleMouseUpListener) {
+          window.removeEventListener("mouseup", this.handleMouseUpListener);
+        }
+        if (this.handleTouchEndListener) {
+          window.removeEventListener("touchend", this.handleTouchEndListener);
+        }
       }
     }
 
