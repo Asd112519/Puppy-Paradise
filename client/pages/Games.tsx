@@ -147,6 +147,13 @@ export default function Games() {
       lastMoveTime: number;
       metrics: any;
       animationId: number | null = null;
+      resizeObserver: ResizeObserver | null = null;
+      handleMouseDownListener: ((e: MouseEvent) => void) | null = null;
+      handleTouchStartListener: ((e: TouchEvent) => void) | null = null;
+      handleMouseMoveListener: ((e: MouseEvent) => void) | null = null;
+      handleTouchMoveListener: ((e: TouchEvent) => void) | null = null;
+      handleMouseUpListener: (() => void) | null = null;
+      handleTouchEndListener: (() => void) | null = null;
 
       constructor(
         container: HTMLElement,
