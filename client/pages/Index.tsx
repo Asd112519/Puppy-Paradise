@@ -32,6 +32,12 @@ const breeds = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ROVUlfLu1BfKDNm8P-kFYEBohfBau7UhDw&s",
     description: "Gentle, good-natured, and calm, known for being a powerful worker.",
   },
+  {
+    id: "chihuahua",
+    name: "Chihuahua",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9xW5-7_VLLz5T9_8P5J6vE_5_BjzNW4nF7w&s",
+    description: "Tiny but mighty, Chihuahuas are known for their bold personality and affectionate nature despite their small size.",
+  },
 ];
 
 const facts = [
