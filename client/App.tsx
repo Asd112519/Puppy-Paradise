@@ -16,6 +16,7 @@ import Interview from "./pages/Interview";
 import Account from "./pages/Account";
 import Games from "./pages/Games";
 import GameBlockBlast from "./pages/GameBlockBlast";
+import GameFetch from "./pages/GameFetch";
 
 const queryClient = new QueryClient();
 
