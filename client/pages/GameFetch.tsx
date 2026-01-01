@@ -370,24 +370,28 @@ export default function GameFetch() {
       animationId = requestAnimationFrame(gameLoop);
     }
 
+    // Store event listener references for cleanup
+    const listeners = {
+      resize: () => resize(),
+      mousedown: (e: MouseEvent) => handleInputStart(e),
+      touchstart: (e: TouchEvent) => {
+        e.preventDefault();
+        handleInputStart(e.touches[0]);
+      },
+      mouseup: () => (mouse.clicked = false),
+      touchend: () => (mouse.clicked = false),
+    };
+
     function init() {
       resize();
-      window.addEventListener("resize", resize);
+      window.addEventListener("resize", listeners.resize);
 
       for (let i = 0; i < 5; i++) backgroundClouds.push(new Cloud());
 
-      canvas.addEventListener("mousedown", (e) => handleInputStart(e));
-      canvas.addEventListener(
-        "touchstart",
-        (e) => {
-          e.preventDefault();
-          handleInputStart(e.touches[0]);
-        },
-        { passive: false }
-      );
-
-      canvas.addEventListener("mouseup", () => (mouse.clicked = false));
-      canvas.addEventListener("touchend", () => (mouse.clicked = false));
+      canvas.addEventListener("mousedown", listeners.mousedown);
+      canvas.addEventListener("touchstart", listeners.touchstart, { passive: false });
+      canvas.addEventListener("mouseup", listeners.mouseup);
+      canvas.addEventListener("touchend", listeners.touchend);
     }
 
     gameRef.current = {
@@ -406,8 +410,11 @@ export default function GameFetch() {
       },
       cleanup: () => {
         if (animationId) cancelAnimationFrame(animationId);
-        canvas.removeEventListener("mousedown", handleInputStart);
-        canvas.removeEventListener("touchstart", handleInputStart);
+        window.removeEventListener("resize", listeners.resize);
+        canvas.removeEventListener("mousedown", listeners.mousedown);
+        canvas.removeEventListener("touchstart", listeners.touchstart);
+        canvas.removeEventListener("mouseup", listeners.mouseup);
+        canvas.removeEventListener("touchend", listeners.touchend);
       },
     };
 
