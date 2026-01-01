@@ -148,6 +148,7 @@ export default function GameBlockBlast() {
       metrics: any;
       animationId: number | null = null;
       resizeObserver: ResizeObserver | null = null;
+      handleThemeBtnListener: (() => void) | null = null;
       handleMouseDownListener: ((e: MouseEvent) => void) | null = null;
       handleTouchStartListener: ((e: TouchEvent) => void) | null = null;
       handleMouseMoveListener: ((e: MouseEvent) => void) | null = null;
