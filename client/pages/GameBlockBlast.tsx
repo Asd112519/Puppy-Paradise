@@ -216,7 +216,8 @@ export default function GameBlockBlast() {
         this.resizeObserver.observe(this.container);
         this.resize();
 
-        this.themeBtn.addEventListener("click", () => this.cycleTheme());
+        this.handleThemeBtnListener = () => this.cycleTheme();
+        this.themeBtn.addEventListener("click", this.handleThemeBtnListener);
         this.applyTheme();
 
         this.handleMouseDownListener = (e) => this.handleStart(e.clientX, e.clientY);
