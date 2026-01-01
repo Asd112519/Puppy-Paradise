@@ -73,6 +73,7 @@ export default function Interview() {
           <Link
             to="/"
             className="mt-8 bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 inline-block"
+            style={{ fontFamily: "'Fredoka', sans-serif" }}
           >
             Exit
           </Link>

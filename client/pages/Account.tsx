@@ -44,6 +44,7 @@ export default function Account() {
                 alert("You have been signed out. A new anonymous session has been started.");
               }}
               className="mt-4 bg-red-500 text-white font-bold py-2 px-6 rounded-full shadow hover:bg-red-600 transition"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
             >
               Sign Out (and Start New Anonymous Session)
             </button>
@@ -70,6 +71,7 @@ export default function Account() {
           <Link
             to="/"
             className="mt-8 bg-gray-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-600 transition-transform transform hover:scale-105 inline-block"
+            style={{ fontFamily: "'Fredoka', sans-serif" }}
           >
             Go Back to Home
           </Link>
