@@ -15,6 +15,7 @@ import MoreFacts from "./pages/MoreFacts";
 import Interview from "./pages/Interview";
 import Account from "./pages/Account";
 import Games from "./pages/Games";
+import GameBlockBlast from "./pages/GameBlockBlast";
 
 const queryClient = new QueryClient();
 
