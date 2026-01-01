@@ -35,7 +35,15 @@ export default function GameBlockBlast() {
         slotColor: "rgba(255,255,255,0.4)",
         slotShadow: "rgba(0,0,0,0.1)",
         gridBg: "rgba(255,255,255,0.25)",
-        palette: ["#00d2ff", "#3a7bd5", "#ffffff", "#89f7fe", "#66a6ff", "#e2ebf0", "#a1c4fd"],
+        palette: [
+          "#00d2ff",
+          "#3a7bd5",
+          "#ffffff",
+          "#89f7fe",
+          "#66a6ff",
+          "#e2ebf0",
+          "#a1c4fd",
+        ],
       },
       {
         name: "Sunset",
@@ -43,7 +51,14 @@ export default function GameBlockBlast() {
         slotColor: "rgba(255,255,255,0.3)",
         slotShadow: "rgba(0,0,0,0.1)",
         gridBg: "rgba(0,0,0,0.1)",
-        palette: ["#ff9966", "#ff5e62", "#ff9a9e", "#fbc2eb", "#a18cd1", "#fad0c4"],
+        palette: [
+          "#ff9966",
+          "#ff5e62",
+          "#ff9a9e",
+          "#fbc2eb",
+          "#a18cd1",
+          "#fad0c4",
+        ],
       },
       {
         name: "Neon",
@@ -51,7 +66,14 @@ export default function GameBlockBlast() {
         slotColor: "#000000",
         slotShadow: "#0ff",
         gridBg: "rgba(255,255,255,0.05)",
-        palette: ["#FF00FF", "#00FFFF", "#00FF00", "#FFFF00", "#FF0000", "#7B00FF"],
+        palette: [
+          "#FF00FF",
+          "#00FFFF",
+          "#00FF00",
+          "#FFFF00",
+          "#FF0000",
+          "#7B00FF",
+        ],
       },
     ];
 
@@ -63,21 +85,101 @@ export default function GameBlockBlast() {
       { mask: [[1], [1], [1]] },
       { mask: [[1, 1, 1, 1]] },
       { mask: [[1], [1], [1], [1]] },
-      { mask: [[1, 1], [1, 1]] },
-      { mask: [[1, 1, 1], [1, 1, 1], [1, 1, 1]] },
-      { mask: [[1, 0], [1, 0], [1, 1]] },
-      { mask: [[0, 1], [0, 1], [1, 1]] },
-      { mask: [[1, 1, 1], [1, 0, 0]] },
-      { mask: [[1, 1, 1], [0, 0, 1]] },
-      { mask: [[1, 1], [1, 0]] },
-      { mask: [[1, 1, 1], [0, 1, 0]] },
-      { mask: [[0, 1, 0], [1, 1, 1]] },
-      { mask: [[1, 0], [1, 1], [1, 0]] },
-      { mask: [[0, 1], [1, 1], [0, 1]] },
-      { mask: [[1, 1, 0], [0, 1, 1]] },
-      { mask: [[0, 1, 1], [1, 1, 0]] },
-      { mask: [[1, 0], [0, 1]] },
-      { mask: [[0, 1], [1, 0]] },
+      {
+        mask: [
+          [1, 1],
+          [1, 1],
+        ],
+      },
+      {
+        mask: [
+          [1, 1, 1],
+          [1, 1, 1],
+          [1, 1, 1],
+        ],
+      },
+      {
+        mask: [
+          [1, 0],
+          [1, 0],
+          [1, 1],
+        ],
+      },
+      {
+        mask: [
+          [0, 1],
+          [0, 1],
+          [1, 1],
+        ],
+      },
+      {
+        mask: [
+          [1, 1, 1],
+          [1, 0, 0],
+        ],
+      },
+      {
+        mask: [
+          [1, 1, 1],
+          [0, 0, 1],
+        ],
+      },
+      {
+        mask: [
+          [1, 1],
+          [1, 0],
+        ],
+      },
+      {
+        mask: [
+          [1, 1, 1],
+          [0, 1, 0],
+        ],
+      },
+      {
+        mask: [
+          [0, 1, 0],
+          [1, 1, 1],
+        ],
+      },
+      {
+        mask: [
+          [1, 0],
+          [1, 1],
+          [1, 0],
+        ],
+      },
+      {
+        mask: [
+          [0, 1],
+          [1, 1],
+          [0, 1],
+        ],
+      },
+      {
+        mask: [
+          [1, 1, 0],
+          [0, 1, 1],
+        ],
+      },
+      {
+        mask: [
+          [0, 1, 1],
+          [1, 1, 0],
+        ],
+      },
+      {
+        mask: [
+          [1, 0],
+          [0, 1],
+        ],
+      },
+      {
+        mask: [
+          [0, 1],
+          [1, 0],
+        ],
+      },
     ];
 
     class Particle {
@@ -118,7 +220,12 @@ export default function GameBlockBlast() {
         ctx.globalAlpha = this.life;
         ctx.fillStyle = this.color;
         ctx.beginPath();
-        ctx.rect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
+        ctx.rect(
+          this.x - this.size / 2,
+          this.y - this.size / 2,
+          this.size,
+          this.size,
+        );
         ctx.fill();
         ctx.restore();
       }
@@ -165,7 +272,7 @@ export default function GameBlockBlast() {
         modal: HTMLElement,
         comboElement: HTMLElement,
         themeBtn: HTMLElement,
-        appFrame: HTMLElement
+        appFrame: HTMLElement,
       ) {
         this.container = container;
         this.canvas = canvas;
@@ -183,7 +290,9 @@ export default function GameBlockBlast() {
           .map(() => Array(GRID_SIZE).fill(null));
         this.hand = [null, null, null];
         this.score = 0;
-        this.highScore = parseInt(localStorage.getItem("blockBlastHigh") || "0");
+        this.highScore = parseInt(
+          localStorage.getItem("blockBlastHigh") || "0",
+        );
 
         this.currentThemeIndex = 0;
         this.theme = THEMES[0];
@@ -220,19 +329,25 @@ export default function GameBlockBlast() {
         this.themeBtn.addEventListener("click", this.handleThemeBtnListener);
         this.applyTheme();
 
-        this.handleMouseDownListener = (e) => this.handleStart(e.clientX, e.clientY);
+        this.handleMouseDownListener = (e) =>
+          this.handleStart(e.clientX, e.clientY);
         this.handleTouchStartListener = (e) =>
           this.handleStart(e.touches[0].clientX, e.touches[0].clientY);
-        this.handleMouseMoveListener = (e) => this.handleMove(e.clientX, e.clientY);
+        this.handleMouseMoveListener = (e) =>
+          this.handleMove(e.clientX, e.clientY);
         this.handleTouchMoveListener = (e) =>
           this.handleMove(e.touches[0].clientX, e.touches[0].clientY);
         this.handleMouseUpListener = () => this.handleEnd();
         this.handleTouchEndListener = () => this.handleEnd();
 
         this.canvas.addEventListener("mousedown", this.handleMouseDownListener);
-        this.canvas.addEventListener("touchstart", this.handleTouchStartListener, {
-          passive: false,
-        });
+        this.canvas.addEventListener(
+          "touchstart",
+          this.handleTouchStartListener,
+          {
+            passive: false,
+          },
+        );
 
         window.addEventListener("mousemove", this.handleMouseMoveListener);
         window.addEventListener("touchmove", this.handleTouchMoveListener, {
@@ -260,21 +375,26 @@ export default function GameBlockBlast() {
           document.querySelectorAll(".score-label").forEach((el) => {
             (el as HTMLElement).style.color = "#333";
           });
-          (document.getElementById("score-val") as HTMLElement).style.color = "#2c3e50";
+          (document.getElementById("score-val") as HTMLElement).style.color =
+            "#2c3e50";
           (this.themeBtn as HTMLElement).style.color = "#333";
           (this.themeBtn as HTMLElement).style.borderColor = "#333";
         } else {
           document.querySelectorAll(".score-label").forEach((el) => {
             (el as HTMLElement).style.color = "#fff";
           });
-          (document.getElementById("score-val") as HTMLElement).style.color = "#fff";
+          (document.getElementById("score-val") as HTMLElement).style.color =
+            "#fff";
           (this.themeBtn as HTMLElement).style.color = "#fff";
-          (this.themeBtn as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)";
+          (this.themeBtn as HTMLElement).style.borderColor =
+            "rgba(255,255,255,0.4)";
         }
       }
 
       getRandomThemeColor() {
-        return this.theme.palette[Math.floor(Math.random() * this.theme.palette.length)];
+        return this.theme.palette[
+          Math.floor(Math.random() * this.theme.palette.length)
+        ];
       }
 
       resize() {
@@ -293,9 +413,11 @@ export default function GameBlockBlast() {
         const boardPixelSize = this.metrics.cellSize * GRID_SIZE;
 
         this.metrics.boardX = (w - boardPixelSize) / 2;
-        this.metrics.boardY = (availableHeightForBoard - boardPixelSize) / 2 + 10;
+        this.metrics.boardY =
+          (availableHeightForBoard - boardPixelSize) / 2 + 10;
         const remainingH = h - (this.metrics.boardY + boardPixelSize);
-        this.metrics.handY = this.metrics.boardY + boardPixelSize + remainingH * 0.3;
+        this.metrics.handY =
+          this.metrics.boardY + boardPixelSize + remainingH * 0.3;
       }
 
       spawnShapes() {
@@ -383,8 +505,10 @@ export default function GameBlockBlast() {
           if (!this.hand[i]) continue;
 
           const shape = this.hand[i];
-          const pxWidth = shape.mask[0].length * this.metrics.cellSize * shape.scale;
-          const pxHeight = shape.mask.length * this.metrics.cellSize * shape.scale;
+          const pxWidth =
+            shape.mask[0].length * this.metrics.cellSize * shape.scale;
+          const pxHeight =
+            shape.mask.length * this.metrics.cellSize * shape.scale;
 
           const centerX = centerScreen + (i - 1) * spacing;
           const centerY = this.metrics.handY + this.metrics.cellSize;
@@ -424,7 +548,7 @@ export default function GameBlockBlast() {
         const { r, c } = this.getGridPos(
           this.dragState.currentX - this.dragState.offsetX,
           this.dragState.currentY - this.dragState.offsetY,
-          shape.mask
+          shape.mask,
         );
 
         if (r !== null && this.canPlace(shape.mask, r, c)) {
@@ -445,8 +569,12 @@ export default function GameBlockBlast() {
       }
 
       getGridPos(tlx: number, tly: number, mask: number[][]) {
-        const c = Math.round((tlx - this.metrics.boardX) / this.metrics.cellSize);
-        const r = Math.round((tly - this.metrics.boardY) / this.metrics.cellSize);
+        const c = Math.round(
+          (tlx - this.metrics.boardX) / this.metrics.cellSize,
+        );
+        const r = Math.round(
+          (tly - this.metrics.boardY) / this.metrics.cellSize,
+        );
         return { r, c };
       }
 
@@ -460,7 +588,8 @@ export default function GameBlockBlast() {
           return false;
         for (let i = 0; i < mask.length; i++) {
           for (let j = 0; j < mask[0].length; j++) {
-            if (mask[i][j] === 1 && this.grid[r + i][c + j] !== null) return false;
+            if (mask[i][j] === 1 && this.grid[r + i][c + j] !== null)
+              return false;
           }
         }
         return true;
@@ -476,10 +605,14 @@ export default function GameBlockBlast() {
               for (let k = 0; k < 3; k++) {
                 this.particles.push(
                   new Particle(
-                    this.metrics.boardX + (c + j) * this.metrics.cellSize + this.metrics.cellSize / 2,
-                    this.metrics.boardY + (r + i) * this.metrics.cellSize + this.metrics.cellSize / 2,
-                    "rgba(255,255,255,0.5)"
-                  )
+                    this.metrics.boardX +
+                      (c + j) * this.metrics.cellSize +
+                      this.metrics.cellSize / 2,
+                    this.metrics.boardY +
+                      (r + i) * this.metrics.cellSize +
+                      this.metrics.cellSize / 2,
+                    "rgba(255,255,255,0.5)",
+                  ),
                 );
               }
             }
@@ -601,7 +734,7 @@ export default function GameBlockBlast() {
           this.metrics.boardY - 8,
           this.metrics.cellSize * GRID_SIZE + 16,
           this.metrics.cellSize * GRID_SIZE + 16,
-          16
+          16,
         );
         this.ctx.fill();
 
@@ -622,7 +755,7 @@ export default function GameBlockBlast() {
           const { r, c } = this.getGridPos(
             this.dragState.currentX - this.dragState.offsetX,
             this.dragState.currentY - this.dragState.offsetY,
-            shape.mask
+            shape.mask,
           );
 
           if (r !== null && this.canPlace(shape.mask, r, c)) {
@@ -631,10 +764,17 @@ export default function GameBlockBlast() {
             for (let i = 0; i < shape.mask.length; i++) {
               for (let j = 0; j < shape.mask[0].length; j++) {
                 if (shape.mask[i][j]) {
-                  const x = this.metrics.boardX + (c + j) * this.metrics.cellSize;
-                  const y = this.metrics.boardY + (r + i) * this.metrics.cellSize;
+                  const x =
+                    this.metrics.boardX + (c + j) * this.metrics.cellSize;
+                  const y =
+                    this.metrics.boardY + (r + i) * this.metrics.cellSize;
                   this.ctx.fillStyle = shape.color;
-                  this.ctx.fillRect(x + 2, y + 2, this.metrics.cellSize - 4, this.metrics.cellSize - 4);
+                  this.ctx.fillRect(
+                    x + 2,
+                    y + 2,
+                    this.metrics.cellSize - 4,
+                    this.metrics.cellSize - 4,
+                  );
                 }
               }
             }
@@ -659,7 +799,8 @@ export default function GameBlockBlast() {
             this.drawShapeShapeOnly(shape, drawX + 10, drawY + 20);
             this.ctx.restore();
           } else {
-            const w = shape.mask[0].length * this.metrics.cellSize * shape.scale;
+            const w =
+              shape.mask[0].length * this.metrics.cellSize * shape.scale;
             const h = shape.mask.length * this.metrics.cellSize * shape.scale;
 
             const centerX = centerScreen + (index - 1) * spacing;
@@ -712,7 +853,15 @@ export default function GameBlockBlast() {
 
         this.ctx.fillStyle = "rgba(255,255,255,0.4)";
         this.ctx.beginPath();
-        this.ctx.ellipse(gx + s / 2, gy + s * 0.2, s * 0.3, s * 0.15, 0, 0, Math.PI * 2);
+        this.ctx.ellipse(
+          gx + s / 2,
+          gy + s * 0.2,
+          s * 0.3,
+          s * 0.15,
+          0,
+          0,
+          Math.PI * 2,
+        );
         this.ctx.fill();
 
         this.ctx.fillStyle = "rgba(0,0,0,0.2)";
@@ -735,7 +884,12 @@ export default function GameBlockBlast() {
         for (let i = 0; i < shape.mask.length; i++) {
           for (let j = 0; j < shape.mask[0].length; j++) {
             if (shape.mask[i][j]) {
-              this.drawGemBlock(x + j * cellSize, y + i * cellSize, cellSize, shape.color);
+              this.drawGemBlock(
+                x + j * cellSize,
+                y + i * cellSize,
+                cellSize,
+                shape.color,
+              );
             }
           }
         }
@@ -747,7 +901,12 @@ export default function GameBlockBlast() {
         for (let i = 0; i < shape.mask.length; i++) {
           for (let j = 0; j < shape.mask[0].length; j++) {
             if (shape.mask[i][j]) {
-              this.ctx.rect(x + j * cellSize, y + i * cellSize, cellSize - 2, cellSize - 2);
+              this.ctx.rect(
+                x + j * cellSize,
+                y + i * cellSize,
+                cellSize - 2,
+                cellSize - 2,
+              );
             }
           }
         }
@@ -762,8 +921,11 @@ export default function GameBlockBlast() {
             .replace(/../g, (color) =>
               (
                 "0" +
-                Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)
-              ).substr(-2)
+                Math.min(
+                  255,
+                  Math.max(0, parseInt(color, 16) + amount),
+                ).toString(16)
+              ).substr(-2),
             )
         );
       }
@@ -787,13 +949,22 @@ export default function GameBlockBlast() {
         }
 
         if (this.handleThemeBtnListener) {
-          this.themeBtn.removeEventListener("click", this.handleThemeBtnListener);
+          this.themeBtn.removeEventListener(
+            "click",
+            this.handleThemeBtnListener,
+          );
         }
         if (this.handleMouseDownListener) {
-          this.canvas.removeEventListener("mousedown", this.handleMouseDownListener);
+          this.canvas.removeEventListener(
+            "mousedown",
+            this.handleMouseDownListener,
+          );
         }
         if (this.handleTouchStartListener) {
-          this.canvas.removeEventListener("touchstart", this.handleTouchStartListener);
+          this.canvas.removeEventListener(
+            "touchstart",
+            this.handleTouchStartListener,
+          );
         }
         if (this.handleMouseMoveListener) {
           window.removeEventListener("mousemove", this.handleMouseMoveListener);
@@ -811,15 +982,33 @@ export default function GameBlockBlast() {
     }
 
     // Initialize game with DOM elements
-    const gameContainer = containerRef.current.querySelector("#game-container") as HTMLDivElement;
-    const canvas = containerRef.current.querySelector("#gameCanvas") as HTMLCanvasElement;
-    const scoreElement = containerRef.current.querySelector("#score-val") as HTMLElement;
-    const bestElement = containerRef.current.querySelector("#best-val") as HTMLElement;
-    const finalScoreElement = containerRef.current.querySelector("#final-score") as HTMLElement;
-    const modal = containerRef.current.querySelector("#game-over-modal") as HTMLElement;
-    const comboElement = containerRef.current.querySelector("#combo-display") as HTMLElement;
-    const themeBtn = containerRef.current.querySelector("#theme-btn") as HTMLElement;
-    const appFrame = containerRef.current.querySelector("#app-frame") as HTMLElement;
+    const gameContainer = containerRef.current.querySelector(
+      "#game-container",
+    ) as HTMLDivElement;
+    const canvas = containerRef.current.querySelector(
+      "#gameCanvas",
+    ) as HTMLCanvasElement;
+    const scoreElement = containerRef.current.querySelector(
+      "#score-val",
+    ) as HTMLElement;
+    const bestElement = containerRef.current.querySelector(
+      "#best-val",
+    ) as HTMLElement;
+    const finalScoreElement = containerRef.current.querySelector(
+      "#final-score",
+    ) as HTMLElement;
+    const modal = containerRef.current.querySelector(
+      "#game-over-modal",
+    ) as HTMLElement;
+    const comboElement = containerRef.current.querySelector(
+      "#combo-display",
+    ) as HTMLElement;
+    const themeBtn = containerRef.current.querySelector(
+      "#theme-btn",
+    ) as HTMLElement;
+    const appFrame = containerRef.current.querySelector(
+      "#app-frame",
+    ) as HTMLElement;
 
     const game = new Game(
       gameContainer,
@@ -830,7 +1019,7 @@ export default function GameBlockBlast() {
       modal,
       comboElement,
       themeBtn,
-      appFrame
+      appFrame,
     );
 
     gameInstanceRef.current = game;
@@ -1094,7 +1283,13 @@ export default function GameBlockBlast() {
           <div id="game-over-modal" className="modal">
             <div className="modal-content">
               <h2>No Moves!</h2>
-              <p style={{ color: "#8b9bb4", fontSize: "1.1rem", marginBottom: "25px" }}>
+              <p
+                style={{
+                  color: "#8b9bb4",
+                  fontSize: "1.1rem",
+                  marginBottom: "25px",
+                }}
+              >
                 Don't give up! Can you beat your best?
               </p>
               <div
@@ -1105,8 +1300,17 @@ export default function GameBlockBlast() {
                   marginBottom: "20px",
                 }}
               >
-                <div style={{ fontSize: "0.9rem", color: "#aaa" }}>FINAL SCORE</div>
-                <div id="final-score" style={{ fontSize: "2.5rem", fontWeight: "700", color: "white" }}>
+                <div style={{ fontSize: "0.9rem", color: "#aaa" }}>
+                  FINAL SCORE
+                </div>
+                <div
+                  id="final-score"
+                  style={{
+                    fontSize: "2.5rem",
+                    fontWeight: "700",
+                    color: "white",
+                  }}
+                >
                   0
                 </div>
               </div>

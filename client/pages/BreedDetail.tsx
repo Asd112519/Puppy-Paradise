@@ -1,7 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 
-const breedDetails: Record<string, { title: string; bgColor: string; details: Array<{ heading: string; text: string }> }> = {
+const breedDetails: Record<
+  string,
+  {
+    title: string;
+    bgColor: string;
+    details: Array<{ heading: string; text: string }>;
+  }
+> = {
   "golden-retriever": {
     title: "All About Golden Retrievers",
     bgColor: "bg-yellow-100 dark:bg-gray-900",
@@ -62,7 +69,7 @@ const breedDetails: Record<string, { title: string; bgColor: string; details: Ar
     details: [
       {
         heading: "Temperament",
-        text: "Wheatens are happy, playful, and devoted to their families. They are known for their \"Wheaten greetin,\" a joyful leap when they welcome people.",
+        text: 'Wheatens are happy, playful, and devoted to their families. They are known for their "Wheaten greetin," a joyful leap when they welcome people.',
       },
       {
         heading: "Exercise Needs",
@@ -92,7 +99,7 @@ const breedDetails: Record<string, { title: string; bgColor: string; details: Ar
       },
     ],
   },
-  "chihuahua": {
+  chihuahua: {
     title: "All About Chihuahuas",
     bgColor: "bg-pink-100 dark:bg-gray-900",
     details: [
@@ -122,7 +129,10 @@ export default function BreedDetail() {
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Breed not found</h1>
-            <Link to="/" className="text-blue-500 hover:text-blue-700 underline">
+            <Link
+              to="/"
+              className="text-blue-500 hover:text-blue-700 underline"
+            >
               Return to Home
             </Link>
           </div>
@@ -133,18 +143,28 @@ export default function BreedDetail() {
 
   return (
     <Layout>
-      <section className={`${breed.bgColor} py-16 min-h-screen flex items-center justify-center transition duration-300`}>
+      <section
+        className={`${breed.bgColor} py-16 min-h-screen flex items-center justify-center transition duration-300`}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white" style={{ fontFamily: "'Pacifico', cursive" }}>
+          <h2
+            className="text-4xl font-bold mb-6 text-gray-900 dark:text-white"
+            style={{ fontFamily: "'Pacifico', cursive" }}
+          >
             {breed.title}
           </h2>
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 text-left max-w-3xl mx-auto text-black dark:text-white">
             {breed.details.map((detail, idx) => (
               <div key={idx} className="mb-6">
-                <h3 className="font-bold text-xl text-gray-600 dark:text-gray-300 mb-2" style={{ fontFamily: "'Pacifico', cursive" }}>
+                <h3
+                  className="font-bold text-xl text-gray-600 dark:text-gray-300 mb-2"
+                  style={{ fontFamily: "'Pacifico', cursive" }}
+                >
                   {detail.heading}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{detail.text}</p>
+                <p className="text-gray-700 dark:text-gray-300">
+                  {detail.text}
+                </p>
               </div>
             ))}
           </div>

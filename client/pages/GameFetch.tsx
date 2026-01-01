@@ -3,10 +3,14 @@ import Layout from "@/components/Layout";
 
 export default function GameFetch() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [gameState, setGameState] = useState<"start" | "playing" | "gameover">("start");
+  const [gameState, setGameState] = useState<"start" | "playing" | "gameover">(
+    "start",
+  );
   const [score, setScore] = useState(0);
   const [finalScore, setFinalScore] = useState(0);
-  const [highScore, setHighScore] = useState(parseInt(localStorage.getItem("fetchHighScore") || "0"));
+  const [highScore, setHighScore] = useState(
+    parseInt(localStorage.getItem("fetchHighScore") || "0"),
+  );
   const [gameOverReason, setGameOverReason] = useState("");
   const gameRef = useRef<any>(null);
 
@@ -24,10 +28,38 @@ export default function GameFetch() {
     let score = 0;
     let difficultyMultiplier = 1;
     const BALL_TYPES = [
-      { type: "tennis", emoji: "🎾", size: 30, bounce: 0.8, speedMod: 1.0, score: 1 },
-      { type: "frisbee", emoji: "🥏", size: 35, bounce: 0.95, speedMod: 1.2, score: 2 },
-      { type: "bone", emoji: "🦴", size: 30, bounce: 0.6, speedMod: 1.1, score: 3 },
-      { type: "soccer", emoji: "⚽", size: 40, bounce: 0.75, speedMod: 0.8, score: 1 },
+      {
+        type: "tennis",
+        emoji: "🎾",
+        size: 30,
+        bounce: 0.8,
+        speedMod: 1.0,
+        score: 1,
+      },
+      {
+        type: "frisbee",
+        emoji: "🥏",
+        size: 35,
+        bounce: 0.95,
+        speedMod: 1.2,
+        score: 2,
+      },
+      {
+        type: "bone",
+        emoji: "🦴",
+        size: 30,
+        bounce: 0.6,
+        speedMod: 1.1,
+        score: 3,
+      },
+      {
+        type: "soccer",
+        emoji: "⚽",
+        size: 40,
+        bounce: 0.75,
+        speedMod: 0.8,
+        score: 1,
+      },
     ];
 
     const OBSTACLES = ["🪨", "🌵", "🌳", "🐈"];
@@ -141,7 +173,8 @@ export default function GameFetch() {
       active: boolean;
 
       constructor() {
-        const variant = BALL_TYPES[Math.floor(Math.random() * BALL_TYPES.length)];
+        const variant =
+          BALL_TYPES[Math.floor(Math.random() * BALL_TYPES.length)];
         this.emoji = variant.emoji;
         this.size = variant.size;
         this.bounceFactor = variant.bounce;
@@ -151,7 +184,10 @@ export default function GameFetch() {
         this.y = height - 100 - Math.random() * 150;
 
         const baseSpeed = width * 0.0045;
-        this.vx = (baseSpeed + Math.random() * 1.5) * variant.speedMod * difficultyMultiplier;
+        this.vx =
+          (baseSpeed + Math.random() * 1.5) *
+          variant.speedMod *
+          difficultyMultiplier;
         this.vy = -(8 + Math.random() * 8);
 
         this.gravity = 0.6;
@@ -205,7 +241,11 @@ export default function GameFetch() {
           gameOverFn("The ball ran away!");
         }
 
-        if (Math.abs(this.vx) < 0.1 && Math.abs(this.vy) < 0.1 && this.y > height - 100) {
+        if (
+          Math.abs(this.vx) < 0.1 &&
+          Math.abs(this.vy) < 0.1 &&
+          this.y > height - 100
+        ) {
           this.vx = 0;
           gameOverFn("The ball stopped!");
         }
@@ -389,7 +429,9 @@ export default function GameFetch() {
       for (let i = 0; i < 5; i++) backgroundClouds.push(new Cloud());
 
       canvas.addEventListener("mousedown", listeners.mousedown);
-      canvas.addEventListener("touchstart", listeners.touchstart, { passive: false });
+      canvas.addEventListener("touchstart", listeners.touchstart, {
+        passive: false,
+      });
       canvas.addEventListener("mouseup", listeners.mouseup);
       canvas.addEventListener("touchend", listeners.touchend);
     }
@@ -435,7 +477,14 @@ export default function GameFetch() {
 
   return (
     <Layout>
-      <div style={{ width: "100vw", height: "100vh", overflow: "hidden", background: "#87CEEB" }}>
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          overflow: "hidden",
+          background: "#87CEEB",
+        }}
+      >
         <canvas ref={canvasRef} style={{ display: "block" }} />
 
         <div
@@ -483,10 +532,23 @@ export default function GameFetch() {
               pointerEvents: "auto",
             }}
           >
-            <h1 style={{ fontSize: "2.25rem", color: "#22c55e", margin: "0 0 0.5rem 0", fontFamily: "'Fredoka', sans-serif" }}>
+            <h1
+              style={{
+                fontSize: "2.25rem",
+                color: "#22c55e",
+                margin: "0 0 0.5rem 0",
+                fontFamily: "'Fredoka', sans-serif",
+              }}
+            >
               FETCH!
             </h1>
-            <p style={{ color: "#4b5563", marginBottom: "1.5rem", fontFamily: "'Comic Sans MS', sans-serif" }}>
+            <p
+              style={{
+                color: "#4b5563",
+                marginBottom: "1.5rem",
+                fontFamily: "'Comic Sans MS', sans-serif",
+              }}
+            >
               Tap the ball before it leaves the screen or hits an obstacle!
             </p>
             <button
@@ -527,13 +589,32 @@ export default function GameFetch() {
               pointerEvents: "auto",
             }}
           >
-            <h1 style={{ fontSize: "2.25rem", color: "#ef4444", margin: "0 0 0.5rem 0", fontFamily: "'Fredoka', sans-serif" }}>
+            <h1
+              style={{
+                fontSize: "2.25rem",
+                color: "#ef4444",
+                margin: "0 0 0.5rem 0",
+                fontFamily: "'Fredoka', sans-serif",
+              }}
+            >
               Oh no!
             </h1>
-            <p style={{ color: "#4b5563", marginBottom: "1rem", fontFamily: "'Comic Sans MS', sans-serif" }}>
+            <p
+              style={{
+                color: "#4b5563",
+                marginBottom: "1rem",
+                fontFamily: "'Comic Sans MS', sans-serif",
+              }}
+            >
               {gameOverReason}
             </p>
-            <p style={{ fontSize: "1.5rem", marginBottom: "1.5rem", fontFamily: "'Comic Sans MS', sans-serif" }}>
+            <p
+              style={{
+                fontSize: "1.5rem",
+                marginBottom: "1.5rem",
+                fontFamily: "'Comic Sans MS', sans-serif",
+              }}
+            >
               Score: <span>{finalScore}</span>
             </p>
             <button

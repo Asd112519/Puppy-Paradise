@@ -6,7 +6,8 @@ export default function GameSelection() {
     {
       id: "block-blast",
       name: "Block Blast",
-      description: "A classic puzzle game where you arrange colorful blocks on an 8x8 grid. Complete rows and columns to earn points!",
+      description:
+        "A classic puzzle game where you arrange colorful blocks on an 8x8 grid. Complete rows and columns to earn points!",
       emoji: "🧩",
       color: "from-pink-500 to-purple-600",
       hoverColor: "hover:from-purple-600 hover:to-pink-500",
@@ -14,7 +15,8 @@ export default function GameSelection() {
     {
       id: "fetch",
       name: "Fetch!",
-      description: "Tap the ball before it leaves the screen or hits an obstacle! Test your reflexes and see how many balls you can catch!",
+      description:
+        "Tap the ball before it leaves the screen or hits an obstacle! Test your reflexes and see how many balls you can catch!",
       emoji: "🎾",
       color: "from-green-400 to-blue-500",
       hoverColor: "hover:from-blue-500 hover:to-green-400",
@@ -26,7 +28,10 @@ export default function GameSelection() {
       <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition duration-300 min-h-screen">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fredoka', sans-serif" }}>
+            <h2
+              className="text-5xl font-bold text-gray-900 dark:text-white mb-4"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
+            >
               🎮 Game Joint 🎮
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
@@ -40,9 +45,14 @@ export default function GameSelection() {
                 key={game.id}
                 className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300"
               >
-                <div className={`bg-gradient-to-br ${game.color} p-8 text-center`}>
+                <div
+                  className={`bg-gradient-to-br ${game.color} p-8 text-center`}
+                >
                   <div className="text-6xl mb-4">{game.emoji}</div>
-                  <h3 className="text-3xl font-bold text-white" style={{ fontFamily: "'Fredoka', sans-serif" }}>
+                  <h3
+                    className="text-3xl font-bold text-white"
+                    style={{ fontFamily: "'Fredoka', sans-serif" }}
+                  >
                     {game.name}
                   </h3>
                 </div>
@@ -74,20 +84,32 @@ export default function GameSelection() {
 
           {/* Coming Soon Section */}
           <div className="mt-20 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fredoka', sans-serif" }}>
+            <h3
+              className="text-2xl font-bold text-gray-900 dark:text-white mb-4"
+              style={{ fontFamily: "'Fredoka', sans-serif" }}
+            >
               🚀 Coming Soon
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               More exciting games are being developed. Stay tuned!
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
-              <span className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold" style={{ fontFamily: "'Fredoka', sans-serif" }}>
+              <span
+                className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold"
+                style={{ fontFamily: "'Fredoka', sans-serif" }}
+              >
                 🎲 Dice Games
               </span>
-              <span className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold" style={{ fontFamily: "'Fredoka', sans-serif" }}>
+              <span
+                className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold"
+                style={{ fontFamily: "'Fredoka', sans-serif" }}
+              >
                 🐕 Puppy Runner
               </span>
-              <span className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold" style={{ fontFamily: "'Fredoka', sans-serif" }}>
+              <span
+                className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold"
+                style={{ fontFamily: "'Fredoka', sans-serif" }}
+              >
                 🎯 Memory Match
               </span>
             </div>

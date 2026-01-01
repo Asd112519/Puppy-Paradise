@@ -26,22 +26,34 @@ export default function Account() {
     <Layout>
       <section className="bg-white dark:bg-gray-800 py-16 min-h-screen flex items-center justify-center transition duration-300">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white" style={{ fontFamily: "'Pacifico', cursive" }}>
+          <h2
+            className="text-4xl font-bold mb-6 text-gray-900 dark:text-white"
+            style={{ fontFamily: "'Pacifico', cursive" }}
+          >
             Puppy Account Management & Settings
           </h2>
           <div className="p-8 rounded-xl shadow-2xl max-w-xl mx-auto bg-gray-100 dark:bg-gray-900 transition duration-300">
-            <p className="text-xl font-bold text-green-600 dark:text-green-300 mb-4">Your Session Status</p>
+            <p className="text-xl font-bold text-green-600 dark:text-green-300 mb-4">
+              Your Session Status
+            </p>
             <div className="mb-4">
               <p className="text-sm break-all text-black dark:text-gray-300">
-                Current User ID (UID): <span className="font-mono font-semibold text-gray-800 dark:text-white">{userId}</span>
+                Current User ID (UID):{" "}
+                <span className="font-mono font-semibold text-gray-800 dark:text-white">
+                  {userId}
+                </span>
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">You are currently signed in anonymously.</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                You are currently signed in anonymously.
+              </p>
             </div>
 
             <button
               onClick={() => {
                 setUserId("user-" + Math.random().toString(36).substr(2, 9));
-                alert("You have been signed out. A new anonymous session has been started.");
+                alert(
+                  "You have been signed out. A new anonymous session has been started.",
+                );
               }}
               className="mt-4 bg-red-500 text-white font-bold py-2 px-6 rounded-full shadow hover:bg-red-600 transition"
               style={{ fontFamily: "'Fredoka', sans-serif" }}
@@ -53,7 +65,10 @@ export default function Account() {
           {/* Dark Mode Toggle */}
           <div className="mt-12 bg-gray-100 dark:bg-gray-900 rounded-xl shadow-2xl p-8 max-w-2xl mx-auto transition duration-300">
             <div className="flex justify-between items-center">
-              <h3 className="font-bold text-xl text-green-600 dark:text-green-300" style={{ fontFamily: "'Pacifico', cursive" }}>
+              <h3
+                className="font-bold text-xl text-green-600 dark:text-green-300"
+                style={{ fontFamily: "'Pacifico', cursive" }}
+              >
                 Dark Mode
               </h3>
               <label className="relative inline-flex items-center cursor-pointer">
