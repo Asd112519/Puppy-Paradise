@@ -11,6 +11,14 @@ export default function GameSelection() {
       color: "from-pink-500 to-purple-600",
       hoverColor: "hover:from-purple-600 hover:to-pink-500",
     },
+    {
+      id: "fetch",
+      name: "Fetch!",
+      description: "Tap the ball before it leaves the screen or hits an obstacle! Test your reflexes and see how many balls you can catch!",
+      emoji: "🎾",
+      color: "from-green-400 to-blue-500",
+      hoverColor: "hover:from-blue-500 hover:to-green-400",
+    },
   ];
 
   return (
