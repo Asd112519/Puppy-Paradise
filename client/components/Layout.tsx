@@ -72,7 +72,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <p style={{ fontFamily: "'Fredoka', sans-serif" }}>
             &copy; 2024 The Puppy Paradise. All rights reserved. |{" "}
             <Link to="/account" className="hover:underline transition duration-300 font-bold text-white">
-              Account
+              Settings
             </Link>
           </p>
         </div>
