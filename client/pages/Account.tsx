@@ -27,7 +27,7 @@ export default function Account() {
       <section className="bg-white dark:bg-gray-800 py-16 min-h-screen flex items-center justify-center transition duration-300">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white" style={{ fontFamily: "'Pacifico', cursive" }}>
-            Puppy Account Management
+            Puppy Account Management & Settings
           </h2>
           <div className="p-8 rounded-xl shadow-2xl max-w-xl mx-auto bg-gray-100 dark:bg-gray-900 transition duration-300">
             <p className="text-xl font-bold text-green-600 dark:text-green-300 mb-4">Your Session Status</p>
