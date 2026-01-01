@@ -786,6 +786,9 @@ export default function GameBlockBlast() {
           this.resizeObserver.disconnect();
         }
 
+        if (this.handleThemeBtnListener) {
+          this.themeBtn.removeEventListener("click", this.handleThemeBtnListener);
+        }
         if (this.handleMouseDownListener) {
           this.canvas.removeEventListener("mousedown", this.handleMouseDownListener);
         }
