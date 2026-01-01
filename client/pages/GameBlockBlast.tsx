@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
 
-export default function Games() {
+export default function GameBlockBlast() {
   const containerRef = useRef<HTMLDivElement>(null);
   const gameInstanceRef = useRef<any>(null);
 
