@@ -519,7 +519,8 @@ export default function GameFetch() {
                 textShadow: "1px 1px 0px rgba(0,0,0,0.2)",
               }}
             >
-              High Score: <span style={{ fontWeight: "bold" }}>{highScore}</span>
+              High Score:{" "}
+              <span style={{ fontWeight: "bold" }}>{highScore}</span>
             </div>
           </div>
         )}
