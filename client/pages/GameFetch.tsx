@@ -604,6 +604,7 @@ export default function GameFetch() {
                 color: "#ef4444",
                 margin: "0 0 0.5rem 0",
                 fontFamily: "'Fredoka', sans-serif",
+                fontWeight: "bold",
               }}
             >
               Oh no!
