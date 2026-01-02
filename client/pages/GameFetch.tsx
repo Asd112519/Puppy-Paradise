@@ -487,33 +487,42 @@ export default function GameFetch() {
       >
         <canvas ref={canvasRef} style={{ display: "block" }} />
 
-        <div
-          style={{
-            position: "absolute",
-            top: 20,
-            left: 20,
-            color: "white",
-            fontSize: "2rem",
-            fontFamily: "'Comic Sans MS', sans-serif",
-            textShadow: "2px 2px 0px rgba(0,0,0,0.2)",
-          }}
-        >
-          Score: <span>{score}</span>
-        </div>
-
-        <div
-          style={{
-            position: "absolute",
-            top: 20,
-            right: 20,
-            color: "white",
-            fontSize: "1.25rem",
-            fontFamily: "'Comic Sans MS', sans-serif",
-            opacity: 0.8,
-          }}
-        >
-          High Score: <span>{highScore}</span>
-        </div>
+        {gameState === "playing" && (
+          <div
+            style={{
+              position: "fixed",
+              left: 20,
+              top: 20,
+              background: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(10px)",
+              borderRadius: "15px",
+              padding: "20px",
+              color: "white",
+              fontFamily: "'Comic Sans MS', sans-serif",
+              zIndex: 10,
+              border: "2px solid rgba(255, 255, 255, 0.2)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "1.5rem",
+                marginBottom: "15px",
+                textShadow: "2px 2px 0px rgba(0,0,0,0.2)",
+              }}
+            >
+              Score: <span style={{ fontWeight: "bold" }}>{score}</span>
+            </div>
+            <div
+              style={{
+                fontSize: "1.1rem",
+                opacity: 0.9,
+                textShadow: "1px 1px 0px rgba(0,0,0,0.2)",
+              }}
+            >
+              High Score: <span style={{ fontWeight: "bold" }}>{highScore}</span>
+            </div>
+          </div>
+        )}
 
         {gameState === "start" && (
           <div
