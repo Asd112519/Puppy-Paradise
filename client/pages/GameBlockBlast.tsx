@@ -1037,17 +1037,14 @@ export default function GameBlockBlast() {
           @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
 
           #app-frame {
-            width: 100vmin;
-            height: 100vmin;
-            max-width: 800px;
-            max-height: 800px;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             position: relative;
             box-shadow: 0 0 50px rgba(0,0,0,0.5);
             overflow: hidden;
             transition: background 0.5s ease;
-            margin: 20px auto;
           }
 
           #ui-header {
