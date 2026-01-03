@@ -324,7 +324,16 @@ export default function GameBlockBlast() {
       }
 
       init() {
-        this.resizeObserver = new ResizeObserver(() => this.resize());
+        // Debounced resize to prevent ResizeObserver loop warnings
+        this.resizeObserver = new ResizeObserver(() => {
+          if (this.resizeTimeoutId !== null) {
+            cancelAnimationFrame(this.resizeTimeoutId);
+          }
+          this.resizeTimeoutId = requestAnimationFrame(() => {
+            this.resize();
+            this.resizeTimeoutId = null;
+          });
+        });
         this.resizeObserver.observe(this.container);
         this.resize();
 
