@@ -966,6 +966,10 @@ export default function GameBlockBlast() {
           cancelAnimationFrame(this.animationId);
         }
 
+        if (this.resizeTimeoutId !== null) {
+          cancelAnimationFrame(this.resizeTimeoutId);
+        }
+
         if (this.resizeObserver) {
           this.resizeObserver.disconnect();
         }
