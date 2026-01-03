@@ -486,7 +486,10 @@ export default function GameFetch() {
           position: "relative",
         }}
       >
-        <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: "100%" }} />
+        <canvas
+          ref={canvasRef}
+          style={{ display: "block", width: "100%", height: "100%" }}
+        />
 
         {/* Score Rectangle */}
         <div
@@ -512,10 +515,21 @@ export default function GameFetch() {
               textShadow: "2px 2px 0px rgba(0,0,0,0.2)",
             }}
           >
-            <div style={{ fontSize: "0.75rem", opacity: 0.8, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
+            <div
+              style={{
+                fontSize: "0.75rem",
+                opacity: 0.8,
+                marginBottom: "5px",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                fontWeight: "600",
+              }}
+            >
               Score
             </div>
-            <div style={{ fontSize: "2.2rem", fontWeight: "bold" }}>{score}</div>
+            <div style={{ fontSize: "2.2rem", fontWeight: "bold" }}>
+              {score}
+            </div>
           </div>
 
           <div
@@ -524,10 +538,21 @@ export default function GameFetch() {
               fontFamily: "'Comic Sans MS', sans-serif",
             }}
           >
-            <div style={{ fontSize: "0.75rem", opacity: 0.8, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
+            <div
+              style={{
+                fontSize: "0.75rem",
+                opacity: 0.8,
+                marginBottom: "5px",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                fontWeight: "600",
+              }}
+            >
               High Score
             </div>
-            <div style={{ fontSize: "1.8rem", fontWeight: "bold" }}>{highScore}</div>
+            <div style={{ fontSize: "1.8rem", fontWeight: "bold" }}>
+              {highScore}
+            </div>
           </div>
         </div>
 

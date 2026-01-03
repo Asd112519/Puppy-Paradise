@@ -414,7 +414,10 @@ export default function GameBlockBlast() {
         const newHeight = this.container.clientHeight;
 
         // Only update canvas if dimensions have actually changed
-        if (newWidth === this.lastCanvasWidth && newHeight === this.lastCanvasHeight) {
+        if (
+          newWidth === this.lastCanvasWidth &&
+          newHeight === this.lastCanvasHeight
+        ) {
           return;
         }
 
@@ -1057,7 +1060,15 @@ export default function GameBlockBlast() {
 
   return (
     <Layout>
-      <div ref={containerRef} style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
+      <div
+        ref={containerRef}
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <style>{`
           @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
           @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
