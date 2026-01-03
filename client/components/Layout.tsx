@@ -83,7 +83,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow flex flex-col">{children}</main>
 
       {/* Footer */}
       <footer className="bg-gradient-to-r from-green-500 to-blue-500 text-white py-5">
