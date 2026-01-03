@@ -32,7 +32,7 @@ export default function GameSelection() {
               className="text-5xl font-bold text-gray-900 dark:text-white mb-4"
               style={{ fontFamily: "'Fredoka', sans-serif" }}
             >
-              🎮 Game Joint 🎮
+              🎮 Game Zone 🎮
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
               Pick a game and let the fun begin! More games coming soon.
