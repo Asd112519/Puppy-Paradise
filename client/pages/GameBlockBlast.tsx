@@ -1169,6 +1169,7 @@ export default function GameBlockBlast() {
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             width: 80%;
             max-width: 320px;
+            font-family: 'Fredoka', sans-serif;
           }
 
           .modal.active .modal-content {
