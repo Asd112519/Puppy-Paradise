@@ -1178,6 +1178,7 @@ export default function GameBlockBlast() {
 
           .modal h2 {
             font-size: 2.2rem;
+            font-weight: 700;
             margin: 0 0 10px 0;
             background: linear-gradient(to right, #ffd700, #ffaa00);
             -webkit-background-clip: text;
