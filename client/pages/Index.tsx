@@ -171,21 +171,21 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Game Joint Section */}
+      {/* Game Zone Section */}
       <section id="games" className="py-16 bg-gradient-to-br from-green-400 to-blue-600 transition duration-300">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-5xl font-bold text-white mb-6" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-            🎮 Game Joint 🎮
+            🎮 Game Zone 🎮
           </h2>
           <p className="text-xl text-white opacity-95 mb-12 max-w-3xl mx-auto">
-            Prepare for interactive fun! We have Block Blast and more games coming soon. Step into the Game Joint and start playing now!
+            Prepare for interactive fun! We have Block Blast and more games coming soon. Step into the Game Zone and start playing now!
           </p>
           <Link
             to="/games"
             className="bg-white text-purple-600 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 transition-transform transform hover:scale-110 inline-block"
             style={{ fontFamily: "'Fredoka', sans-serif" }}
           >
-            Enter Game Joint
+            Enter Game Zone
           </Link>
         </div>
       </section>
