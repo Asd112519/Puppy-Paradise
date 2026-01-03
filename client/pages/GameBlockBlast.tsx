@@ -255,6 +255,7 @@ export default function GameBlockBlast() {
       metrics: any;
       animationId: number | null = null;
       resizeObserver: ResizeObserver | null = null;
+      resizeTimeoutId: number | null = null;
       lastCanvasWidth: number = 0;
       lastCanvasHeight: number = 0;
       handleThemeBtnListener: (() => void) | null = null;
