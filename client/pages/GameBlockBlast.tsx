@@ -400,8 +400,18 @@ export default function GameBlockBlast() {
       }
 
       resize() {
-        this.canvas.width = this.container.clientWidth;
-        this.canvas.height = this.container.clientHeight;
+        const newWidth = this.container.clientWidth;
+        const newHeight = this.container.clientHeight;
+
+        // Only update canvas if dimensions have actually changed
+        if (newWidth === this.lastCanvasWidth && newHeight === this.lastCanvasHeight) {
+          return;
+        }
+
+        this.lastCanvasWidth = newWidth;
+        this.lastCanvasHeight = newHeight;
+        this.canvas.width = newWidth;
+        this.canvas.height = newHeight;
 
         const w = this.canvas.width;
         const h = this.canvas.height;
