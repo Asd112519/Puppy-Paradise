@@ -483,20 +483,26 @@ export default function GameFetch() {
           height: "100vh",
           overflow: "hidden",
           background: "#87CEEB",
-          display: "flex",
+          position: "relative",
         }}
       >
-        {/* Sidebar */}
+        <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: "100%" }} />
+
+        {/* Score Rectangle */}
         <div
           style={{
-            width: "200px",
-            background: "rgba(0, 0, 0, 0.3)",
+            position: "absolute",
+            top: "20px",
+            left: "20px",
+            background: "rgba(0, 0, 0, 0.4)",
             padding: "20px",
+            borderRadius: "15px",
             display: "flex",
             flexDirection: "column",
-            gap: "20px",
-            borderRight: "4px solid rgba(255, 255, 255, 0.3)",
-            flexShrink: 0,
+            gap: "15px",
+            border: "3px solid rgba(255, 255, 255, 0.3)",
+            minWidth: "180px",
+            zIndex: 50,
           }}
         >
           <div
@@ -506,10 +512,10 @@ export default function GameFetch() {
               textShadow: "2px 2px 0px rgba(0,0,0,0.2)",
             }}
           >
-            <div style={{ fontSize: "0.85rem", opacity: 0.9, marginBottom: "8px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
+            <div style={{ fontSize: "0.75rem", opacity: 0.8, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
               Score
             </div>
-            <div style={{ fontSize: "2.5rem", fontWeight: "bold" }}>{score}</div>
+            <div style={{ fontSize: "2.2rem", fontWeight: "bold" }}>{score}</div>
           </div>
 
           <div
@@ -518,16 +524,12 @@ export default function GameFetch() {
               fontFamily: "'Comic Sans MS', sans-serif",
             }}
           >
-            <div style={{ fontSize: "0.85rem", opacity: 0.9, marginBottom: "8px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
+            <div style={{ fontSize: "0.75rem", opacity: 0.8, marginBottom: "5px", textTransform: "uppercase", letterSpacing: "1px", fontWeight: "600" }}>
               High Score
             </div>
-            <div style={{ fontSize: "2rem", fontWeight: "bold" }}>{highScore}</div>
+            <div style={{ fontSize: "1.8rem", fontWeight: "bold" }}>{highScore}</div>
           </div>
         </div>
-
-        {/* Game Canvas Area */}
-        <div style={{ flex: 1, position: "relative" }}>
-          <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: "100%" }} />
 
         {gameState === "start" && (
           <div
@@ -652,18 +654,17 @@ export default function GameFetch() {
           </div>
         )}
 
-          <style>{`
-            @keyframes shake {
-              10%, 90% { transform: translate3d(-4px, 0, 0); }
-              20%, 80% { transform: translate3d(8px, 0, 0); }
-              30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
-              40%, 60% { transform: translate3d(8px, 0, 0); }
-            }
-            body.shake {
-              animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
-            }
-          `}</style>
-        </div>
+        <style>{`
+          @keyframes shake {
+            10%, 90% { transform: translate3d(-4px, 0, 0); }
+            20%, 80% { transform: translate3d(8px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
+            40%, 60% { transform: translate3d(8px, 0, 0); }
+          }
+          body.shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+          }
+        `}</style>
       </div>
     </Layout>
   );
