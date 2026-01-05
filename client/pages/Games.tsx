@@ -21,6 +21,15 @@ export default function GameSelection() {
       color: "from-green-400 to-blue-500",
       hoverColor: "hover:from-blue-500 hover:to-green-400",
     },
+    {
+      id: "memory-match",
+      name: "Penny's Memory Match",
+      description:
+        "Test your memory matching skills with Penny! Match pairs of cards and beat the timer across multiple challenging levels!",
+      emoji: "🧠",
+      color: "from-indigo-500 to-pink-500",
+      hoverColor: "hover:from-pink-500 hover:to-indigo-500",
+    },
   ];
 
   return (
