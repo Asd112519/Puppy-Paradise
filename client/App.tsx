@@ -38,6 +38,7 @@ const App = () => (
           <Route path="/games" element={<Games />} />
           <Route path="/games/block-blast" element={<GameBlockBlast />} />
           <Route path="/games/fetch" element={<GameFetch />} />
+          <Route path="/games/memory-match" element={<GameMemoryMatch />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
