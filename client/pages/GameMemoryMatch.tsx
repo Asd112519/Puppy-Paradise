@@ -137,39 +137,45 @@ export default function GameMemoryMatch() {
 
     setIsLocked(true);
 
-    const timer = setTimeout(() => {
-      const [idx1, idx2] = flippedIndices;
-      const card1 = cards[idx1];
-      const card2 = cards[idx2];
+    // Check if it's a match
+    const card1Id = cards[flippedIndices[0]].id;
+    const card2Id = cards[flippedIndices[1]].id;
+    const isMatch = card1Id === card2Id;
 
-      if (card1.id === card2.id) {
+    const timer = setTimeout(() => {
+      if (isMatch) {
         // Match found
         setCards((prev) =>
           prev.map((card, idx) =>
-            idx === idx1 || idx === idx2 ? { ...card, matched: true } : card
+            idx === flippedIndices[0] || idx === flippedIndices[1]
+              ? { ...card, matched: true }
+              : card
           )
         );
-        const newMatched = matchedPairs + 1;
-        setMatchedPairs(newMatched);
-
-        if (newMatched === totalPairsNeeded) {
-          handleLevelComplete();
-        }
+        setMatchedPairs((prev) => {
+          const newMatched = prev + 1;
+          if (newMatched === totalPairsNeeded) {
+            handleLevelComplete();
+          }
+          return newMatched;
+        });
       } else {
         // No match, flip back
         setCards((prev) =>
           prev.map((card, idx) =>
-            idx === idx1 || idx === idx2 ? { ...card, flipped: false } : card
+            idx === flippedIndices[0] || idx === flippedIndices[1]
+              ? { ...card, flipped: false }
+              : card
           )
         );
       }
 
       setFlippedIndices([]);
       setIsLocked(false);
-    }, flippedIndices.length === 2 && cards[flippedIndices[0]].id === cards[flippedIndices[1]].id ? 400 : 1000);
+    }, isMatch ? 400 : 1000);
 
     return () => clearTimeout(timer);
-  }, [flippedIndices, isLocked, cards, matchedPairs, totalPairsNeeded]);
+  }, [flippedIndices]);
 
   const handleCardClick = (index: number) => {
     if (
