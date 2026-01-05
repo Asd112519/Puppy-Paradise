@@ -118,18 +118,19 @@ export default function GameMemoryMatch() {
   useEffect(() => {
     if (totalPairsNeeded === 0) return;
 
-    if (timeLeft <= 0 && matchedPairs < totalPairsNeeded) {
-      handleGameOver();
-      return;
-    }
-
     const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          handleGameOver();
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
 
     timerRef.current = timer;
     return () => clearInterval(timer);
-  }, [timeLeft, totalPairsNeeded, matchedPairs]);
+  }, [totalPairsNeeded]);
 
   // Check match effect
   useEffect(() => {
