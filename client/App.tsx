@@ -17,6 +17,7 @@ import Account from "./pages/Account";
 import Games from "./pages/Games";
 import GameBlockBlast from "./pages/GameBlockBlast";
 import GameFetch from "./pages/GameFetch";
+import GameMemoryMatch from "./pages/GameMemoryMatch";
 
 const queryClient = new QueryClient();
 
