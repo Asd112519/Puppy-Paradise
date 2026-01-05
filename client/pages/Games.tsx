@@ -115,12 +115,6 @@ export default function GameSelection() {
               >
                 🐕 Puppy Runner
               </span>
-              <span
-                className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold"
-                style={{ fontFamily: "'Fredoka', sans-serif" }}
-              >
-                🎯 Memory Match
-              </span>
             </div>
           </div>
         </div>
