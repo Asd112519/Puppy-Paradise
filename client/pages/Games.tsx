@@ -30,6 +30,15 @@ export default function GameSelection() {
       color: "from-indigo-500 to-pink-500",
       hoverColor: "hover:from-pink-500 hover:to-indigo-500",
     },
+    {
+      id: "dice-race",
+      name: "Dice Roll Race",
+      description:
+        "Race to 100! Roll the dice, bank your points, and beat your opponent. But watch out—roll a 1 and lose everything!",
+      emoji: "🎲",
+      color: "from-orange-500 to-red-500",
+      hoverColor: "hover:from-red-500 hover:to-orange-500",
+    },
   ];
 
   return (
@@ -103,12 +112,6 @@ export default function GameSelection() {
               More exciting games are being developed. Stay tuned!
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
-              <span
-                className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold"
-                style={{ fontFamily: "'Fredoka', sans-serif" }}
-              >
-                🎲 Dice Games
-              </span>
               <span
                 className="inline-block bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-bold"
                 style={{ fontFamily: "'Fredoka', sans-serif" }}
