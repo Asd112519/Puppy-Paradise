@@ -18,6 +18,7 @@ import Games from "./pages/Games";
 import GameBlockBlast from "./pages/GameBlockBlast";
 import GameFetch from "./pages/GameFetch";
 import GameMemoryMatch from "./pages/GameMemoryMatch";
+import GameDiceRace from "./pages/GameDiceRace";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/games/block-blast" element={<GameBlockBlast />} />
           <Route path="/games/fetch" element={<GameFetch />} />
           <Route path="/games/memory-match" element={<GameMemoryMatch />} />
+          <Route path="/games/dice-race" element={<GameDiceRace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
