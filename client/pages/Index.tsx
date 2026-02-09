@@ -46,7 +46,7 @@ const breeds = [
     id: "chihuahua",
     name: "Chihuahua",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXN5V-H0K5xF8wP9M7Q2L1R6S3T4U5V6W7X8&s",
+      "https://cdn.builder.io/api/v1/image/assets%2F3d5c3c031bf54490a6d05757e1b477eb%2Fef7780f062164371a2647e1b4cb38a2d",
     description:
       "Tiny but mighty, Chihuahuas are known for their bold personality and affectionate nature despite their small size.",
   },
@@ -119,11 +119,13 @@ export default function Index() {
                 to={`/breed/${breed.id}`}
                 className="bg-white dark:bg-gray-700 text-black dark:text-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition duration-300 block"
               >
-                <img
-                  src={breed.image}
-                  alt={breed.name}
-                  className="w-full h-48 object-cover"
-                />
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <img
+                    src={breed.image}
+                    alt={breed.name}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
                 <div
                   className="p-6"
                   style={{ fontFamily: "'Comic Sans MS', sans-serif" }}
