@@ -275,7 +275,10 @@ export default function Index() {
           >
             What's Next in Puppy Paradise?
           </h2>
-          <p className="text-xl text-white opacity-90 mb-8 max-w-3xl mx-auto">
+          <p
+            className="text-xl text-white opacity-90 mb-8 max-w-3xl mx-auto"
+            style={{ fontFamily: "'Comic Sans MS', sans-serif" }}
+          >
             We're constantly working to bring you more fun and features. Our
             next major update is coming soon!
           </p>
