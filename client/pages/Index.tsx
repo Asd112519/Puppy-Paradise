@@ -271,7 +271,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <h2
             className="text-4xl font-bold text-white mb-6"
-            style={{ fontFamily: "'Fredoka', sans-serif" }}
+            style={{ fontFamily: "'Comic Sans MS', sans-serif" }}
           >
             What's Next in Puppy Paradise?
           </h2>
